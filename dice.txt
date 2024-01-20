@@ -1,0 +1,595 @@
+index.html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Dice The Dispute Away</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="main">
+      <div class="partA"><h1>Just Roll The Dispute Away</h1></div>
+
+      <div class="partB">
+        <div class="p1"><h2>Player 1</h3></div>
+
+        <div id="diceA" class="container">
+          <div class="j">
+            <div id="a" class="dotA a"></div>
+            <div id="b" class="dotA b"></div>
+            <div id="c" class="dotA c"></div>
+          </div>
+          <div class="k">
+            <!--<div id="d" class="dotA hide"></div>-->
+            <div id="e" class="dotA"></div>
+           <!-- <div id="f" class="dotA hide"></div>-->
+          </div>
+          <div class="l">
+            <div id="g" class="dotA"></div>
+            <div id="h" class="dotA"></div>
+            <div id="i" class="dotA"></div>
+          </div>
+        </div>
+
+        <div class="p2"><h2>Player 2</h3></div>
+
+        <div id="diceB" class="container">
+          <div class="j">
+            <div id="A" class="dotB"></div>
+            <div id="B" class="dotB"></div>
+            <div id="C" class="dotB"></div>
+          </div>
+          <div class="k">
+            <!--<div id="D" class="dotA hide"></div>-->
+            <div id="E" class="dotB"></div>
+            <!--<div id="F" class="dotA hide"></div>-->
+          </div>
+          <div class="l">
+            <div id="G" class="dotB"></div>
+            <div id="H" class="dotB"></div>
+            <div id="I" class="dotB"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="obito"><button type="button" class="btn btn-outline-warning">Roll</button>
+        <button type="button" class="btn btn-light">Reset</button>
+
+      </div>
+
+      <div class="partC"><footer>Hope This Was Helpful.</footer></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+style.css
+
+
+
+body {
+  background-color: darkturquoise;
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 2.5rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 2rem;
+  font-family: "dancing script", cursive;
+}
+html {
+  font-size: 16px;
+}
+.container {
+  background-color: aliceblue;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  flex: 1 1 1;
+  justify-content: center;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+#E{
+  margin: 0 2rem 0 2rem;
+}
+
+#e{
+  margin: 0 2rem 0 2rem;
+}
+
+footer {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.dotA,.dotB {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.j {
+  display: inline-flex;
+  gap: 3rem;
+  flex: 1 1 1;
+
+  flex-direction: column;
+  justify-content: center;
+}
+
+.k {
+  display: inline-flex;
+  gap: 0rem;
+  flex-direction: row;
+  flex: 1 1 1;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.l {
+  display: inline-flex;
+  gap: 3rem;
+  flex-direction: column;
+  flex: 1 1 1;
+
+  justify-content: center;
+}
+
+.hide {
+  background-color: aliceblue;
+}
+
+.main {
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: repeat(5, auto) 2 rem;
+  /*grid-template-columns: repeat(4,0.5fr);*/
+  justify-content: center;
+
+  margin-bottom: 2 rem;
+}
+
+.partA {
+  /* grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 2;
+    grid-column-end:4; */
+  grid-area: 1 / 2 / 1/ 4;
+  text-align: center;
+}
+.partB {
+  grid-area: 2 /2/ 2/ 4;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+
+  text-align: center;
+}
+.p1 {
+  grid-area: 1/1/1/1;
+}
+.p2 {
+  grid-area: 1/2/1/2;
+}
+#diceA {
+  grid-area: 2/1/2/1;
+}
+#diceB {
+  grid-area: 2/2/2/2;
+}
+
+.partC {
+  margin-top: -0.5rem;
+  margin-bottom: 3 rem;
+  grid-area: 4 /2/ 5/ 4;
+}
+
+.obito {
+  margin-top: -0.5rem;
+  text-align: center;
+  grid-area: 3 /2/ 4/ 4;
+  font-weight: bolder;
+  color: red;
+  border: 0.2rem  transparent dashed;
+}
+.btn-outline-warning{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  font-weight: bolder;
+  color:brown;
+  border: 0.2rem black solid;
+  height: 4rem;
+  width: 9rem;
+  margin-right: 10rem;
+}
+.btn-light{
+  font-size: 1.5rem;
+  border: 0.1rem solid black;
+  border-radius: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  align-self: self-end;
+  margin-left: 1rem;
+  height: 4rem;
+  width: 9rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+@media (max-width: 1350px) {
+  html {
+    font-size: 15px;
+  }
+  body {
+    background-color: rgb(236, 118, 118);
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 12px;
+  }
+  body {
+    background-color: rgb(118, 210, 87);
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 8px;
+  }
+  body {
+    background-color: rgba(199, 155, 240, 0.884);
+  }
+}
+
+
+
+script.js
+
+
+let currentTime = new Date();
+let seconds = currentTime.getSeconds();
+let a = 0;
+let m = Math.floor(Math.random(seconds) * 6) + 1;
+let n = Math.floor(Math.random(seconds) * 6) + 1;
+let b = 0;
+let obito1 = document.getElementsByClassName("dotA");
+let obito2 = document.getElementsByClassName("dotB");
+
+start();
+
+function start() {
+  //alert("Let's Begin !");
+  location.reload;
+  reset();
+}
+// alert("hello   " + m + "  " + n);
+// check(0);
+// check(m);
+// check(n);
+
+function check(b) {
+  let c = 0;
+  if (m == n) {
+    alert("Seems like It's a draw please Roll again! ");
+    // obito1[3].classList.add("hide");
+    // obito2[3].classList.add("hide");
+    reset();
+    return;
+  } else if (b == m) {
+    c = 0;
+  } else if (b == n) {
+    c = 7;
+  }
+
+  switch (b) {
+    // case 0:
+    //     hide(3+c);
+    //     break;
+    case 1:
+      hide(0 + c);
+      hide(1 + c);
+      hide(2 + c);
+      hide(4 + c);
+      hide(5 + c);
+      hide(6 + c);
+      break;
+    case 2:
+      hide(1 + c);
+      hide(2 + c);
+      hide(3 + c);
+      hide(4 + c);
+      hide(5 + c);
+      break;
+    case 3:
+      hide(0 + c);
+      hide(1 + c);
+      hide(5 + c);
+      hide(6 + c);
+      break;
+    case 4:
+      hide(1 + c);
+      hide(3 + c);
+      hide(5 + c);
+      break;
+    case 5:
+      hide(1 + c);
+      hide(5 + c);
+      break;
+    case 6:
+      hide(3 + c);
+      break;
+    default:
+      console.log("error at switch" + b);
+      break;
+  }
+}
+
+function hide(a) {
+  if (a < 7) {
+    // document.getElementsByClassName("dotA")[a].classList.add("hide");
+    obito1[a].classList.add("hide");
+  } else if (a >= 7) {
+    a = a - 7;
+    // document.getElementsByClassName("dotB")[a].classList.add("hide");
+    obito2[a].classList.add("hide");
+  }
+}
+
+const b1 = document.getElementsByClassName("btn-outline-warning")[0];
+const b2 = document.getElementsByClassName("btn-light")[0];
+
+b2.addEventListener("click", function rst() {
+  //   // location.reload();
+  //   let obito1 = document.getElementsByClassName("dotA")[obito1.length];
+  //   let obito2 = document.getElementsByClassName("dotB")[obito2.length];
+  for (let i = 0; i < obito1.length; i++) {
+    obito1[i].classList.remove("hide");
+    obito1[3].classList.add("hide");
+  }
+  for (let i = 0; i < obito2.length; i++) {
+    obito2[i].classList.remove("hide");
+    obito2[3].classList.add("hide");
+  }
+  alert("Reset Complete ! ");
+});
+
+b1.addEventListener("click", function chk() {
+  for (let i = 0; i < obito1.length; i++) {
+    obito1[i].classList.remove("hide");
+  }
+  for (let i = 0; i < obito2.length; i++) {
+    obito2[i].classList.remove("hide");
+  }
+  m = Math.floor(Math.random(seconds) * 6) + 1;
+  check(m);
+  n = Math.floor(Math.random(seconds) * 6) + 1;
+  check(n);
+  alert(" Here are the scores for Player1 = " + m + " and " + "Player2 = " + n);
+  again();
+});
+
+function again() {
+  if (m > n) {
+    alert("Player 1 wins !!!");
+  } else if (m < n) {
+    alert("Player 2 wins !!!");
+  }
+}
+function reset() {
+  for (let i = 0; i < obito1.length; i++) {
+    obito1[i].classList.remove("hide");
+    obito1[3].classList.add("hide");
+  }
+  for (let i = 0; i < obito2.length; i++) {
+    obito2[i].classList.remove("hide");
+    obito2[3].classList.add("hide");
+  }
+}
+//   let dot1 = obito1;
+//   for (var i = 0; i < dot1.length; i++) {
+//     if ((i == 3)) {
+//       obito1[3].classList.add("hide");
+//     }
+//     obito1[i].classList.remove("hide");
+//   }
+//   let dot2 = obito2;
+//   for (var i = 0; i < dot2.length; i++) {
+//     if ((i == 3)) {
+//       obito2[3].classList.add("hide");
+//     }
+//     obito2[i].classList.remove("hide");
+//   }
+
+//   const dot2 = document.getElementsByClassName("dotB");
+//   for (var i = 0; i < dot2.length; i++) {
+//     if ((i = 3)) {
+//       continue;
+//     }
+//     document.getElementsByClassName("dotB")[i].classList.remove("hide");
+//   }
+
+
+End
+
+
+new index.js
+
+let currentTime = new Date();
+let seconds = currentTime.getSeconds();
+let a = 0;
+let m = Math.floor(Math.random(seconds) * 6) + 1;
+let n = Math.floor(Math.random(seconds) * 6) + 1;
+let b = 0;
+let obito1 = document.getElementsByClassName("dotA");
+let obito2 = document.getElementsByClassName("dotB");
+let pl1=prompt("Enter The Name Of Player1: ");
+let pl2=prompt("Enter The Name Of Player2: ");
+start();
+
+function start() {
+  location.reload;
+  reset();
+}
+
+function check(b,d) {
+  let c = d;
+  if (m == n) {
+    document.getElementsByClassName("result")[0].innerHTML = "Looks It's a Draw !";
+  }
+
+  switch (b) {
+
+    case 1:
+      hide(0 + c);
+      hide(1 + c);
+      hide(2 + c);
+      unhide(3 + c);
+      hide(4 + c);
+      hide(5 + c);
+      hide(6 + c);
+      break;
+    case 2:
+      unhide(0 + c);
+      hide(2 + c);
+      hide(1 + c);
+      hide(3 + c);
+      hide(4 + c);
+      hide(5 + c);
+      unhide(6 + c);
+      break;
+    case 3:
+      hide(0 + c);
+      hide(1 + c);
+      unhide(2 + c);
+      unhide(3 + c);
+      unhide(4 + c);
+      hide(5 + c);
+      hide(6 + c);
+      break;
+    case 4:
+      unhide(0 + c);
+      hide(1 + c);
+      unhide(2 + c);
+      hide(3 + c);
+      unhide(4 + c);
+      hide(5 + c);
+      unhide(6 + c);
+      break;
+    case 5:
+      unhide(0 + c);
+      hide(1 + c);
+      unhide(2 + c);
+      unhide(3 + c);
+      unhide(4 + c);
+      hide(5 + c);
+      unhide(6 + c);
+      break;
+    case 6:
+      unhide(0 + c);
+      unhide(1 + c);
+      unhide(2 + c);
+      hide(3 + c);
+      unhide(4 + c);
+      unhide(5 + c);
+      unhide(6 + c);
+      break;
+    default:
+      console.log("error at switch" + b);
+      break;
+  }
+}
+
+function hide(a) {
+  if (a < 7) {
+    obito1[a].classList.add("hide");
+  } else if (a >= 7) {
+    a = a - 7;
+    obito2[a].classList.add("hide");
+  }
+}
+function unhide(a) {
+  if (a < 7) {
+    obito1[a].classList.remove("hide");
+  } else if (a >= 7) {
+    a = a - 7;
+    obito2[a].classList.remove("hide");
+  }
+}
+
+const b1 = document.getElementsByClassName("btn-outline-warning")[0];
+const b2 = document.getElementsByClassName("btn-light")[0];
+
+
+
+b1.addEventListener("click", function chk() {
+  reset();
+  roll();
+  again();
+}
+);
+
+b2.addEventListener("click", function rst() {
+     // location.reload();
+  reset();
+  alert("Reset Complete ! ");
+}
+);
+
+function roll(){
+  m = Math.floor(Math.random(seconds) * 6) + 1;
+  check(m,0);
+  n = Math.floor(Math.random(seconds) * 6) + 1;
+  check(n,7);
+  console.log(" Here are the scores for Player1 = " + m + " and " + "Player2 = " + n);
+}
+
+function again() {
+  document.getElementsByTagName("h2")[0].textContent = pl1;
+  document.getElementsByTagName("h2")[1].textContent = pl2;
+  if (m > n) {
+    // alert("Player 1 wins !!!");
+    document.getElementsByClassName("result")[0].innerHTML = "🚩"+pl1+" Wins!!!";
+  } else if (m < n) {
+    // alert("Player 2 wins !!!");
+    document.getElementsByClassName("result")[0].innerHTML = "🚩"+pl2+" Wins!!!";
+  }
+  reset();
+}
+
+function reset() {
+  for (let i = 0; i < obito1.length; i++) {
+    obito1[i].classList.remove("hide");
+    obito1[3].classList.add("hide");
+  }
+  for (let i = 0; i < obito2.length; i++) {
+    obito2[i].classList.remove("hide");
+    obito2[3].classList.add("hide");
+  }
+}
