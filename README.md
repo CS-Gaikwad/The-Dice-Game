@@ -1,3 +1,34 @@
-# The Dice  Game
+# Dice Roll Game
 
-Step into a world of decision-making excitement with The Dice Game—an engaging and lighthearted approach to settling choices without the hassle of debates or disagreements. Say goodbye to decision fatigue and let the roll of the dice guide you through a playful journey of choices and possibilities. Whether you're pondering what to eat for dinner, which movie to watch, or any other dilemma, The Dice Game transforms decision-making into an enjoyable and stress-free experience. Embrace the randomness, roll the dice, and let the fun begin!
+This simple dice roll game allows two players to roll dice and determine the winner based on the higher roll.
+
+## Setup
+
+1. Enter the names of Player 1 and Player 2 when prompted.
+2. Use the "Roll Dice" button to roll the dice.
+3. The game will display the result and declare the winner.
+4. Use the "Reset" button to start a new round.
+
+## Usage
+
+- Click the "Roll Dice" button to initiate the dice roll.
+- Use the "Reset" button to start a new round.
+
+## Code Overview
+
+The JavaScript code uses event listeners to handle button clicks and control the game logic. The game includes functions to simulate dice rolls, update the visual representation of dice, and determine the winner.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- Flexbox
+- CSS Grid
+- Bootstrap
+
+## CSS Styling
+
+The CSS provides a visually appealing layout, featuring a dark turquoise background, stylish fonts, and a responsive design with media queries for different screen sizes. Flexbox and CSS Grid are utilized for efficient and flexible layout management, while Bootstrap components enhance the overall design consistency and responsiveness.
+
+Happy gaming!
